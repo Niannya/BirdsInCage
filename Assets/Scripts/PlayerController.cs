@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float runMultiplier = 1.5f;
     private bool isRunning;
     private Vector2 moveInput;
+    private bool canMove = true;
 
     private Vector2 facingDirection = Vector2.down;
     public Vector2 FacingDirection => facingDirection;
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (!canMove) return;
+
         // 读取输入与移动
         isRunning = Input.GetKey(KeyCode.LeftShift);
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -37,5 +40,16 @@ public class PlayerController : MonoBehaviour
         float currentSpeed = isRunning ? moveSpeed * runMultiplier : moveSpeed;
         Vector2 nextPos = rb.position + moveInput * currentSpeed * Time.fixedDeltaTime;
         rb.MovePosition(nextPos);
+    }
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
+
+        if (!canMove)
+        {
+            moveInput = Vector2.zero;
+            isRunning = false;
+        }
     }
 }

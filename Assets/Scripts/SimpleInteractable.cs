@@ -5,8 +5,8 @@ public class SimpleInteractable : MonoBehaviour
     [SerializeField]
     [TextArea]
     private string message = "test";
-    public void Interact()
+    public void Interact(InteractionUI interactionUI)
     {
-        Debug.Log(message);
+        interactionUI.Show(message);
     }
 }
