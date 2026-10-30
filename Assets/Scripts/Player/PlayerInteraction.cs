@@ -13,6 +13,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         playerController = GetComponent<PlayerController>();
     }
+
     private void Update()
     {
         Vector2 direction = playerController.FacingDirection;
@@ -27,10 +28,10 @@ public class PlayerInteraction : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(interactionOrigin.position, direction, interactionDistance, interactionLayers);
             if (hit.collider != null)
             {
-                SimpleInteractable simpleInteractable = hit.collider.GetComponent<SimpleInteractable>();
-                if (simpleInteractable != null)
+                IInteractable interactable = hit.collider.GetComponent<SimpleInteractable>();
+                if (interactable != null)
                 {
-                    simpleInteractable.Interact(interactionUI);
+                    interactable.Interact(interactionUI);
                     playerController.SetCanMove(false);
                 }
             }

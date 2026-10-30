@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SimpleInteractable : MonoBehaviour
+public class SimpleInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField]
     [TextArea]
