@@ -6,6 +6,7 @@ public class SequencePuzzle : MonoBehaviour
     [SerializeField] private int[] correctSequence;
     private List<int> currentSequence = new List<int>();
     private bool isSolved;
+    private bool hasKey;
 
     public void Submit(int id)
     {
@@ -13,7 +14,6 @@ public class SequencePuzzle : MonoBehaviour
 
         if (currentSequence.Contains(id)) return;
         currentSequence.Add(id);
-        Debug.Log($"Current sequence: [{string.Join(", ", currentSequence)}]");
 
         if (currentSequence.Count < correctSequence.Length) return;
 
@@ -26,7 +26,15 @@ public class SequencePuzzle : MonoBehaviour
             }
         }
         isSolved = true;
-        Debug.Log("Solved!");
+        hasKey = true;
+    }
+
+    public bool TryUseKey()
+    {
+        if(!hasKey) return false;
+
+        hasKey = false;
+        return true;
     }
 }
 
