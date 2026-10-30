@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(interactionOrigin.position, direction, interactionDistance, interactionLayers);
             if (hit.collider != null)
             {
-                IInteractable interactable = hit.collider.GetComponent<SimpleInteractable>();
+                IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable != null)
                 {
                     interactable.Interact(interactionUI);
