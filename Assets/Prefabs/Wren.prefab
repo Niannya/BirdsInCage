@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2293310080154399125}
   - component: {fileID: 4093158055934682262}
   - component: {fileID: -6091751085529525103}
+  - component: {fileID: -6897159513199725613}
   m_Layer: 0
   m_Name: Wren
   m_TagString: Player
@@ -176,3 +177,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4109d658c21712d4a977bad6ff946a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6897159513199725613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346590398868905449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766fffb589596c94a919c93c2f47fe10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDistance: 1.5
+  interactionLayers:
+    serializedVersion: 2
+    m_Bits: 64
