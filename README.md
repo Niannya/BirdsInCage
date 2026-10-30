@@ -1,6 +1,6 @@
-# BirdsInCage — Codex 交接资料
+# BirdsInCage
 
-本目录包含从 ChatGPT 讨论与已有故事笔记整理的**设计上下文**，不是完整 Unity 工程。
+本目录是 BirdsInCage 的 Unity 工程，同时包含从已有故事笔记与近期讨论整理的设计上下文。当前目标是逐步完成一个只涉及宅邸大厅与客厅的可玩垂直切片。
 
 ## 文档索引
 - `AGENTS.md`：Codex 工作规则（放在 Unity 工程根目录）
@@ -9,11 +9,13 @@
 - `Docs/Characters.md`：人物设定
 - `Docs/Mansion.md`：宅邸背景、布局状态
 - `Docs/Story.md`：现有故事大纲与结局（剧透）
-- `Docs/VerticalSlice.md`：可玩切片的目标及待定范围
+- `Docs/VerticalSlice.md`：可玩切片的已确认范围、技术方向及待定事项
 - `Docs/DecisionLog.md`：已确定、待定、待核对事项
 - `Docs/SourceNotes.md`：来源、整理原则及原始记录中需要核对的措辞
+- `Docs/宅邸布局讨论更新.md`：宅邸规模、一层布局与楼梯方案的增量讨论记录
+- `Docs/References/first_floor_sketch_latest.png`：当前一层概念草图
 
 ## 使用方式
-把本目录中的 `AGENTS.md` 和 `Docs/` 复制到**实际 Unity 项目根目录**（与 `Assets/`、`Packages/` 同级），不要用此资料包代替 Unity 工程。然后在 Codex 中打开真正的 Unity 工程目录，请 Codex 先阅读文档并检查现有工程，不要直接开工修改。
+使用 Unity 2022.3.62f2 打开本目录。开始新的设计或实现工作前，先阅读 `AGENTS.md`、`Docs/DecisionLog.md`、`Docs/GameOverview.md` 以及与任务有关的其他设计文档。
 
-这些文件是交接草案：如与用户最新明确决定冲突，以最新明确决定为准，并在 `DecisionLog.md` 记录更新。
+设计文档仍会持续更新：如旧内容与用户最新明确决定冲突，以最新决定为准，并同步维护 `Docs/DecisionLog.md`。
