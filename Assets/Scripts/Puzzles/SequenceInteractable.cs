@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SequenceInteractable : MonoBehaviour, IInteractable
@@ -9,7 +8,14 @@ public class SequenceInteractable : MonoBehaviour, IInteractable
 
     public void Interact(InteractionUI interactionUI)
     {
-        puzzle.Submit(id);
-        interactionUI.Show(message);
+        string resultMessage = puzzle.Submit(id);
+        if (string.IsNullOrEmpty(resultMessage))
+        {
+            interactionUI.Show(message);
+        }
+        else
+        {
+            interactionUI.Show(resultMessage);
+        }
     }
 }
